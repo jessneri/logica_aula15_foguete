@@ -14,29 +14,33 @@ const contador = () => {
     contagem--;
     if (contagem === -1) {
         clearInterval(id)
-        mensagem.innerText = "Lançamento iniciado!"
+        mensagem.innerText = "Lançamento iniciado!";
         imagem1.remove();
-        imagem2.setAttribute("src", "foguete_gif.gif")
+        imagem2.setAttribute("src", "foguete_gif.gif");
     }
 }
 
 const reiniciar = () => {
     contagem = 10;
     parar = false;
-    mensagem.innerText = "Preparando para contagem regressiva..."
+    mensagem.innerText = "Preparando para contagem regressiva...";
+    textoContagem.innerText = "";
     imagem2.remove();
-    imagem1.setAttribute("src", "foguete_img.png")
+    imagem1.setAttribute("src", "foguete_img.png");
+    button.innerText = "Iniciar contagem regressiva!";
 }
 
 
 button.addEventListener("click", event => {
-    if (!parar) {
+    if (parar === false) {
         id = setInterval(contador, 1000);
-        button.innerText = "Abortar a missão!"
-    } else if (parar) {
-        // mensagem.innerText = "Preparando para contagem regressiva...";
+        button.innerText = "Abortar a missão!";
+        parar = true;
+    } else {
+        parar = false;
         clearInterval(id);
         reiniciar();
+
     }
 
 });

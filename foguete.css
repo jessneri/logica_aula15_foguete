@@ -54,4 +54,5 @@ button {
     display: flex;
     align-items: center;
     align-content: flex-end;
+    border-radius: 4em;
 }
