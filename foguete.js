@@ -23,15 +23,14 @@ const contador = () => {
 const reiniciar = () => {
     contagem = 10;
     parar = false;
+    mensagem.innerText = "Preparando para contagem regressiva..."
     imagem2.remove();
     imagem1.setAttribute("src", "foguete_img.png")
 }
 
 
 button.addEventListener("click", event => {
-    id = setInterval(contador, 1000);
     if (!parar) {
-        parar = true;
         id = setInterval(contador, 1000);
         button.innerText = "Abortar a missão!"
     } else if (parar) {
@@ -39,7 +38,5 @@ button.addEventListener("click", event => {
         clearInterval(id);
         reiniciar();
     }
-    button.revome();
-    botaoAbortarMissao.removeAttribute("hidden");
 
 });
