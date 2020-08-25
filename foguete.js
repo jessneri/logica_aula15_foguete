@@ -32,7 +32,7 @@ const reiniciar = () => {
 
 
 button.addEventListener("click", event => {
-    if (parar === false) {
+    if (!parar) {
         id = setInterval(contador, 1000);
         button.innerText = "Abortar a missão!";
         parar = true;
