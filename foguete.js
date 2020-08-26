@@ -15,8 +15,8 @@ const contador = () => {
     if (contagem === -1) {
         clearInterval(id)
         mensagem.innerText = "Lançamento iniciado!";
-        imagem1.remove();
-        imagem2.setAttribute("src", "foguete_gif.gif");
+        imagem1.style.display = "none";
+        imagem2.style.display = "block";
     }
 }
 
@@ -25,8 +25,8 @@ const reiniciar = () => {
     parar = false;
     mensagem.innerText = "Preparando para contagem regressiva...";
     textoContagem.innerText = "";
-    imagem2.remove();
-    imagem1.setAttribute("src", "foguete_img.png");
+    imagem2.style.display = "none";
+    imagem1.style.display = "block";
     button.innerText = "Iniciar contagem regressiva!";
 }
 
